@@ -1,13 +1,8 @@
-alerts:
-- rule: DEPLOYMENT_FAILED
-- rule: DOMAIN_FAILED
-functions:
-- github:
-    branch: master
-    deploy_on_push: true
-    repo: RemoteVibesApp/remotesvibes-server
-  name: nodejs-api
-  routes:
-  - path: /
-  source_dir: /
-name: nodejs-helloworld
+spec:
+  name: sample-nodejs
+  services:
+  - environment_slug: node-js
+    git:
+      branch: main
+      repo_clone_url: https://github.com/digitalocean/sample-nodejs.git
+    name: sample-nodejs
